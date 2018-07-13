@@ -10,6 +10,7 @@ config_schema:
   - ["pins", "o", {title: "Pins layout"}]
   - ["pins.led", "i", -1, {title: "LED GPIO pin"}]
   - ["pins.button", "i", -1, {title: "Button GPIO pin"}]
+  - ["pins.button_pull_up", "b", true, {title: "True if button is pulled up when inactive"}]
 
 conds:
   - when: mos.platform == "esp32"
@@ -32,6 +33,20 @@ conds:
       config_schema:
         - ["pins.led", 64]
         - ["pins.button", 15]
+  - when: mos.platform == "stm32"
+    apply:
+      conds:
+        - when: build_vars.BOARD == "DISCO-F746NG"
+          apply:
+            config_schema:
+              - ["pins.led", 129]     # PI1
+              - ["pins.button", 139]  # PI11
+              - ["pins.button_active_high", true]
+        - when: build_vars.BOARD == "NUCLEO-F746ZG"
+          apply:
+            config_schema:
+              - ["debug.stdout_uart", 3]
+              - ["debug.stderr_uart", 3]
 
 tags:
   - c
