@@ -46,12 +46,16 @@ conds:
       conds:
         - when: build_vars.BOARD == "DISCO-F746NG"
           apply:
+            libs:
+              - origin: https://github.com/mongoose-os-libs/ethernet
             config_schema:
               - ["pins.led", 129]     # PI1
               - ["pins.button", 139]  # PI11
               - ["pins.button_active_high", true]
         - when: build_vars.BOARD == "NUCLEO-F746ZG"
           apply:
+            libs:
+              - origin: https://github.com/mongoose-os-libs/ethernet
             config_schema:
               - ["debug.stdout_uart", 3]
               - ["debug.stderr_uart", 3]
@@ -75,4 +79,4 @@ libs:
   - origin: https://github.com/mongoose-os-libs/shadow
   - origin: https://github.com/mongoose-os-libs/sntp
 
-manifest_version: 2017-09-29
+manifest_version: 2018-08-29

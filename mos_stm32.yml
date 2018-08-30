@@ -1,5 +1,4 @@
 libs:
   - origin: https://github.com/mongoose-os-libs/azure
-  - origin: https://github.com/mongoose-os-libs/ethernet
   - origin: https://github.com/mongoose-os-libs/gcp
   - origin: https://github.com/mongoose-os-libs/ota-shadow
