@@ -44,6 +44,21 @@ conds:
   - when: mos.platform == "stm32"
     apply:
       conds:
+        - when: build_vars.BOARD == "B-L475E-IOT01A"
+          apply:
+            libs:
+              - origin: https://github.com/mongoose-os-libs/wifi-ism43xxx
+            config_schema:
+              - ["pins.led", 0x1e]     # PB14
+              - ["pins.button", 0x2d]  # PC13
+              - ["pins.button_active_high", true]
+              #                                                    PC11.6                PC12.6                PC10.6
+              - ["wifi.ism43xxx.spi", '{"unit_no": 3, "miso_gpio": 0x6002b, "mosi_gpio": 0x6002c, "sclk_gpio": 0x6002a}']
+              - ["wifi.ism43xxx.cs_gpio", 0x40]      # CS = PE0
+              - ["wifi.ism43xxx.drdy_gpio", 0x41]    # DRDY = PE1
+              - ["wifi.ism43xxx.rst_gpio", 0x48]     # RST = PE8
+              - ["wifi.ism43xxx.boot0_gpio", 0x1c]   # BOOT0 = PB12
+              - ["wifi.ism43xxx.wakeup_gpio", 0x1d]  # WAKEUP = PB13
         - when: build_vars.BOARD == "DISCO-F746NG"
           apply:
             libs:
