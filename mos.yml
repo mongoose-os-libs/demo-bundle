@@ -12,6 +12,21 @@ config_schema:
   - ["pins.button", "i", -1, {title: "Button GPIO pin"}]
   - ["pins.button_pull_up", "b", true, {title: "True if button is pulled up when inactive"}]
 
+libs:
+  - origin: https://github.com/mongoose-os-libs/aws
+  - origin: https://github.com/mongoose-os-libs/ca-bundle
+  - origin: https://github.com/mongoose-os-libs/core
+  - origin: https://github.com/mongoose-os-libs/dash
+  - origin: https://github.com/mongoose-os-libs/http-server
+  - origin: https://github.com/mongoose-os-libs/neopixel
+  - origin: https://github.com/mongoose-os-libs/provision
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-service-gpio
+  - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/shadow
+  - origin: https://github.com/mongoose-os-libs/sntp
+
 conds:
   - when: mos.platform == "esp32"
     apply:
@@ -43,10 +58,19 @@ conds:
         - ["provision.button.hold_ms", 5000]
   - when: mos.platform == "stm32"
     apply:
+      libs:
+        - origin: https://github.com/mongoose-os-libs/azure
+        - origin: https://github.com/mongoose-os-libs/gcp
+        - origin: https://github.com/mongoose-os-libs/ota-shadow
+        - origin: https://github.com/mongoose-os-libs/rpc-azure
+        - origin: https://github.com/mongoose-os-libs/rpc-mqtt
+        - origin: https://github.com/mongoose-os-libs/rpc-service-ota
+        - origin: https://github.com/mongoose-os-libs/watson
       conds:
         - when: build_vars.BOARD == "B-L475E-IOT01A"
           apply:
             libs:
+              - origin: https://github.com/mongoose-os-libs/rpc-service-wifi
               - origin: https://github.com/mongoose-os-libs/wifi-ism43xxx
             config_schema:
               - ["pins.led", 0x1e]     # PB14
@@ -78,20 +102,5 @@ conds:
 tags:
   - c
   - demo
-
-libs:
-  - origin: https://github.com/mongoose-os-libs/aws
-  - origin: https://github.com/mongoose-os-libs/ca-bundle
-  - origin: https://github.com/mongoose-os-libs/core
-  - origin: https://github.com/mongoose-os-libs/dash
-  - origin: https://github.com/mongoose-os-libs/http-server
-  - origin: https://github.com/mongoose-os-libs/neopixel
-  - origin: https://github.com/mongoose-os-libs/provision
-  - origin: https://github.com/mongoose-os-libs/rpc-service-config
-  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
-  - origin: https://github.com/mongoose-os-libs/rpc-service-gpio
-  - origin: https://github.com/mongoose-os-libs/rpc-uart
-  - origin: https://github.com/mongoose-os-libs/shadow
-  - origin: https://github.com/mongoose-os-libs/sntp
 
 manifest_version: 2018-08-29
