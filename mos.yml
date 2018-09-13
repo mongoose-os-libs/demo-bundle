@@ -91,6 +91,7 @@ conds:
               - ["pins.led", 129]     # PI1
               - ["pins.button", 139]  # PI11
               - ["pins.button_active_high", true]
+              - ["eth.enable", true]
         - when: build_vars.BOARD == "NUCLEO-F746ZG"
           apply:
             libs:
@@ -98,6 +99,7 @@ conds:
             config_schema:
               - ["debug.stdout_uart", 3]
               - ["debug.stderr_uart", 3]
+              - ["eth.enable", true]
 
 tags:
   - c
