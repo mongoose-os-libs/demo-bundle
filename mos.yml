@@ -102,5 +102,6 @@ conds:
 tags:
   - c
   - demo
+  - docs:misc:Demo bundle
 
 manifest_version: 2018-08-29
