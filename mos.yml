@@ -8,7 +8,6 @@ sources:
 
 libs:
   - origin: https://github.com/mongoose-os-libs/aws
-  - origin: https://github.com/mongoose-os-libs/boards
   - origin: https://github.com/mongoose-os-libs/ca-bundle
   - origin: https://github.com/mongoose-os-libs/core
   - origin: https://github.com/mongoose-os-libs/dash
