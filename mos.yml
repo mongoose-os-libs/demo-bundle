@@ -39,6 +39,15 @@ conds:
       libs:
         - origin: https://github.com/mongoose-os-libs/rpc-service-i2c
         - origin: https://github.com/mongoose-os-libs/rpc-service-wifi
+  - when: mos.platform == "ubuntu"
+    apply:
+      libs:
+        - origin: https://github.com/mongoose-os-libs/azure
+        - origin: https://github.com/mongoose-os-libs/gcp
+        - origin: https://github.com/mongoose-os-libs/rpc-azure
+        - origin: https://github.com/mongoose-os-libs/rpc-gcp
+        - origin: https://github.com/mongoose-os-libs/rpc-mqtt
+        - origin: https://github.com/mongoose-os-libs/watson
 
 tags:
   - c
