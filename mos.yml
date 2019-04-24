@@ -116,6 +116,23 @@ conds:
   - when: mos.platform == "rs14100"
     apply:
       libs:
+        - origin: https://github.com/mongoose-os-libs/atca
+        - origin: https://github.com/mongoose-os-libs/azure
+        - origin: https://github.com/mongoose-os-libs/gcp
+        - origin: https://github.com/mongoose-os-libs/i2c
+        - origin: https://github.com/mongoose-os-libs/ota-shadow
+        - origin: https://github.com/mongoose-os-libs/ota-http-client
+        - origin: https://github.com/mongoose-os-libs/ota-http-server
+        - origin: https://github.com/mongoose-os-libs/rpc-azure
+        - origin: https://github.com/mongoose-os-libs/rpc-gcp
+        - origin: https://github.com/mongoose-os-libs/rpc-loopback
+        - origin: https://github.com/mongoose-os-libs/rpc-mqtt
+        - origin: https://github.com/mongoose-os-libs/rpc-service-atca
+        - origin: https://github.com/mongoose-os-libs/rpc-service-gpio
+        - origin: https://github.com/mongoose-os-libs/rpc-service-i2c
+        - origin: https://github.com/mongoose-os-libs/rpc-service-ota
+        - origin: https://github.com/mongoose-os-libs/rpc-service-wifi
+        - origin: https://github.com/mongoose-os-libs/watson
         - origin: https://github.com/mongoose-os-libs/wifi
 
   - when: mos.platform == "stm32"
