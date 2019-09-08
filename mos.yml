@@ -68,7 +68,6 @@ conds:
         - origin: https://github.com/mongoose-os-libs/ota-shadow
         - origin: https://github.com/mongoose-os-libs/ota-http-client
         - origin: https://github.com/mongoose-os-libs/ota-http-server
-        - origin: https://github.com/mongoose-os-libs/pppos
         - origin: https://github.com/mongoose-os-libs/rpc-azure
         - origin: https://github.com/mongoose-os-libs/rpc-gatts
         - origin: https://github.com/mongoose-os-libs/rpc-gcp
